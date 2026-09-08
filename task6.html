@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Form</title>
+    <link rel="stylesheet" href="Style6.css">
+</head>
+<body>
+    <p>Hello, you can join our Java Course by filling out the form below:</p>
+
+    <div class="form-container">
+        <form id="contactForm">
+            <input type="text" id="username" name="username" placeholder="Enter your name">
+            <small id="nameError" class="error"></small><br><br>
+
+            <input type="email" id="email" name="email" placeholder="Enter your email">
+            <small id="emailError" class="error"></small><br><br>
+
+            <textarea id="message" name="message" placeholder="Enter your message"></textarea>
+            <small id="messageError" class="error"></small><br><br>
+
+            <button type="submit">Submit</button>
+        </form>
+        <p id="successMessage" class="success"></p>
+    </div>
+
+    <script>
+        document.getElementById("contactForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // prevent actual submission
+
+            let isValid = true;
+
+            // Clear previous messages
+            document.getElementById("nameError").textContent = "";
+            document.getElementById("emailError").textContent = "";
+            document.getElementById("messageError").textContent = "";
+            document.getElementById("successMessage").textContent = "";
+
+            // Name validation
+            const name = document.getElementById("username").value.trim();
+            if (name === "") {
+                document.getElementById("nameError").textContent = "Name cannot be empty.";
+                isValid = false;
+            }
+
+            // Email validation
+            const email = document.getElementById("email").value.trim();
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (email === "") {
+                document.getElementById("emailError").textContent = "Email cannot be empty.";
+                isValid = false;
+            } else if (!emailRegex.test(email)) {
+                document.getElementById("emailError").textContent = "Invalid email format.";
+                isValid = false;
+            }
+
+            // Message validation
+            const message = document.getElementById("message").value.trim();
+            if (message === "") {
+                document.getElementById("messageError").textContent = "Message cannot be empty.";
+                isValid = false;
+            }
+
+            // Success message
+            if (isValid) {
+                document.getElementById("successMessage").textContent = "Form submitted successfully!";
+                document.getElementById("contactForm").reset(); // clear form after success
+            }
+        });
+    </script>
+</body>
+</html>
