@@ -10,8 +10,8 @@ The form validates:
 - **Message** → must not be empty  
 
 On successful validation, a **success message** is displayed.
-<img width="1917" height="917" alt="Screenshot 2026-09-08 145923" src="https://github.com/user-attachments/assets/4537ad64-437e-4367-8a33-8b829f5755ca" />
 <img width="1910" height="910" alt="Screenshot 2026-09-08 150015" src="https://github.com/user-attachments/assets/c659b19b-d035-470a-81b0-cd4ffe31ecdb" />
+<img width="1917" height="917" alt="Screenshot 2026-09-08 145923" src="https://github.com/user-attachments/assets/4537ad64-437e-4367-8a33-8b829f5755ca" />
 
 If inputs are invalid, **error messages** appear below each field.
 <img width="1912" height="911" alt="Screenshot 2026-09-08 150034" src="https://github.com/user-attachments/assets/3648bfc5-7f42-4e18-8e30-f11bef62c7bf" />
